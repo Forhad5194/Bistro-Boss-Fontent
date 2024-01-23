@@ -2,14 +2,14 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 import cardimg from "../../assets/home/slide1.jpg"
 const Recommend = () => {
     return (
-        <section>
+        <section className="mb-24">
             <SectionTitle
 
                 heading={'Should Try'}
                 subHeading={'CHEF RECOMMENDS'}
             />
 
-            <div className="flex gap-6">
+            <div className="flex  gap-6">
                 <div className="card w-[424px] h-[480px] bg-base-100 shadow-xl">
                     <figure className="">
                         <img src={cardimg} alt="" className=" w-[424px]" />
