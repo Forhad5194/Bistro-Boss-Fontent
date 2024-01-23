@@ -5,6 +5,7 @@ import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
 import OurMenu from "../OurMenu/OurMenu";
 import PopularMenu from "../PopularMenu/PopularMenu";
+import TestiMonials from "../TestiMonials/TestiMonials";
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
             <CallUs/>
             <Recommend />
             <OurMenu />
+            <TestiMonials />
         </div>
     );
 };
