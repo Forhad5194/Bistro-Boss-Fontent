@@ -19,7 +19,7 @@ const OurMenu = () => {
                     <h4 className='uppercase  '>March 20, 2023</h4>
                     <p className='uppercase  '>WHERE CAN I GET SOME?</p>
                     <p className='mb-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error <br /> voluptate facere, deserunt dolores maiores quod nobis quas <br /> quasi. Eaque repellat recusandae ad laudantium tempore <br /> consequatur consequuntur omnis ullam maxime tenetur.</p>
-                    <button className="btn btn-outline btn-primary border-0 border-b-4 uppercase">Read more </button>
+                    <button className="btn btn-outline btn-black text-white border-0 border-b-4 uppercase">Read more </button>
 
                 </div>
             </div>

@@ -18,7 +18,7 @@ const Recommend = () => {
                         <h2 className="card-title">Caeser Salad</h2>
                         <p>Lettuce, Eggs, Parmesan Cheese, Chicken Breast Fillets.</p>
                         <div className="card-actions">
-                            <button className="btn btn-primary">add to cart</button>
+                            <button className="btn btn-outline btn-black  border-0 border-b-4 uppercase">add to cart</button>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@ const Recommend = () => {
                         <h2 className="card-title">Caeser Salad</h2>
                         <p>Lettuce, Eggs, Parmesan Cheese, Chicken Breast Fillets.</p>
                         <div className="card-actions">
-                            <button className="btn btn-primary">add to cart</button>
+                            <button className="btn btn-outline btn-black  border-0 border-b-4 uppercase">add to cart</button>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@ const Recommend = () => {
                         <h2 className="card-title">Caeser Salad</h2>
                         <p>Lettuce, Eggs, Parmesan Cheese, Chicken Breast Fillets.</p>
                         <div className="card-actions">
-                            <button className="btn btn-primary">add to cart</button>
+                            <button className="btn btn-outline btn-black  border-0 border-b-4 uppercase">add to cart</button>
                         </div>
                     </div>
                 </div>
