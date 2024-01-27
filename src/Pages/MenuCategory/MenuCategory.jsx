@@ -1,6 +1,7 @@
 import React from 'react';
 import Allmenu from '../Shared/Allmenu/Allmenu';
 import Cover from '../Shared/Cover/Cover';
+import { Link } from 'react-router-dom';
 
 const MenuCategory = ({ items, title, img2, subTitle }) => {
     return (
@@ -23,9 +24,11 @@ const MenuCategory = ({ items, title, img2, subTitle }) => {
 
 
                 </div>
-                <div className='text-center mt-12 mb-8 '>
-                    <button className="btn btn-outline btn-black  border-0 border-b-4 uppercase">ORDER YOUR FAVOURITE FOOD</button>
-                </div>
+                <Link to={`/order/${title}`}>
+                    <div className='text-center mt-12 mb-8 '>
+                        <button className="btn btn-outline btn-black  border-0 border-b-4 uppercase">ORDER YOUR FAVOURITE FOOD</button>
+                    </div>
+                </Link>
             </div>
         </div>
     );
