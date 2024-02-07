@@ -11,7 +11,7 @@ const FoodCard = ({item}) => {
                 <img src={image} alt=""/>
             </figure>
                 <p className="bg-slate-900 absolute right-0 mr-4 mt-4 top-5 px-4  text-white font-bold">${price}</p>
-            <div className="card-body items-center text-center">
+            <div className="card-body flex flex-col items-center">
                 <h2 className="card-title">{name}</h2>
                 <p>{recipe}</p>
                 <div className="card-actions">
