@@ -1,21 +1,46 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
 import SingUpImg from '../../assets/others/authentication2.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-
+import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 const SingUp = () => {
+
+
+    const {creatUser, updateProfile}= useContext(AuthContext)
+    const navigate = useNavigate()
 
     const {
         register,
         handleSubmit,
-     
+        reset,
         formState: { errors },
       } = useForm()
       const onSubmit = (data) => {
         
         console.log(data);
-    
+         creatUser(data.email, data.password)
+        .then( result => {
+            const logedUser = result.user;
+            console.log(logedUser);
+        })
+        updateProfile(data.name, data.photoURL)
+        .then( ()=> {
+            console.log("Profile updated successfully");
+            reset()
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Your profile has been updated",
+                showConfirmButton: false,
+                timer: 1500
+              });
+
+              navigate('/')
+        })
+        .catch( error => console.log(error))
+        
     
     }
  
@@ -48,6 +73,14 @@ const SingUp = () => {
                             </div>
                             <div className="form-control">
                                 <label className="label">
+                                    <span className="label-text">photo URL </span>
+                                </label>
+                                <input type="text" placeholder="PhotoURL " {...register("photoURL", { required: true }) }  className="input input-bordered" required />
+                                {errors.photoURL && <span> Name is required</span>}
+
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
                                 <input type="email" placeholder="email" {...register("email" , { required: true })} name='email' className="input input-bordered" required />
@@ -58,9 +91,15 @@ const SingUp = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name='password' {...register("password", { required: true, minLength: 8, maxLength: 20 })} placeholder="password" className="input input-bordered" required />
+                                <input type="password" name='password' {...register("password", { required: true, 
+                                    minLength: 8,
+
+                                     maxLength: 20 })} placeholder="password" className="input input-bordered" required />
                                 {errors.password?.type === 'required' && <p>
                                      Password must be at least 8 characters
+                                    </p>}
+                                {errors.password?.type === 'required' && <p>
+                                     Password must lest then 20 characters
                                     </p>}
                                 {errors.password && <span className='text-red-500'>Password  is required</span>}
                                 <label className="label">
