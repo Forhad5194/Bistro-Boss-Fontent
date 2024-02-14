@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import { PiShoppingCartBold } from "react-icons/pi";
+
 
 
 const Navbar = () => {
@@ -10,8 +12,8 @@ const Navbar = () => {
     const handleLogOut = () => {
 
         logOut()
-        .then(() => {})
-        .catch( error => console.log(error))
+            .then(() => { })
+            .catch(error => console.log(error))
     }
 
     const navlist = <>
@@ -21,12 +23,30 @@ const Navbar = () => {
         <NavLink><Link to="/menu">OUR MENU</Link></NavLink>
         <NavLink><Link to="/Order/soup">OUR SHOP</Link></NavLink>
         <NavLink><Link to="/testPages">testPages</Link></NavLink>
+        <NavLink><Link to="/">
+
+            <div className="flex justify-center items-center gap-3">
+            <PiShoppingCartBold className="w-[20px] h-[30px]" />
+                <div className="badge badge-secondar">
+                    +0
+
+                </div>
+            </div>
+
+
+
+
+         
+
+        </Link></NavLink>
+
+
 
 
 
         {
             user ? <>
-                <button  onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
+                <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
                 <span>{user?.name}</span>
 
 

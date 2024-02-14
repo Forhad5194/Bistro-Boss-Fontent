@@ -11,8 +11,12 @@ const Login = () => {
     const captchaRef = useRef(null)
     const navegate = useNavigate()
     const loaction = useLocation()
-    
+
     const from = loaction.state?.from?.pathname || "/";
+    console.log('chacked to state and parth', loaction.state);
+
+
+
     useEffect(() => {
         loadCaptchaEnginge(6);
     }, [])
@@ -25,22 +29,22 @@ const Login = () => {
         Swal.fire({
             title: "user login successfully ",
             showClass: {
-              popup: `
+                popup: `
                 animate__animated
                 animate__fadeInUp
                 animate__faster
               `
             },
             hideClass: {
-              popup: `
+                popup: `
                 animate__animated
                 animate__fadeOutDown
                 animate__faster
               `
             }
-          });
+        });
 
-          navegate(from, {replace:true});
+        navegate(from, { replace: true });
     };
 
     const validateCaptchas = (e) => {
@@ -87,7 +91,7 @@ const Login = () => {
                                 <label className="label">
                                     <LoadCanvasTemplate />
                                 </label>
-                                <input onBlur={validateCaptchas } type="text" ref={captchaRef} name='captcha' placeholder=" type captcha  " className="input input-bordered" required />
+                                <input onBlur={validateCaptchas} type="text" ref={captchaRef} name='captcha' placeholder=" type captcha  " className="input input-bordered" required />
 
                             </div>
                             <div className="form-control mt-6">
